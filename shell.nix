@@ -26,5 +26,8 @@ let noChecks = haskell.packages.ghcjs.override
     );
 in runCommand "miso-toys-env"
 {
-    buildInputs = [ thisghc ];
+    buildInputs = [ thisghc
+                    haskell.packages.ghc864.cabal-install
+                    haskell.packages.ghc864.ghcid
+                  ];
 } ""
